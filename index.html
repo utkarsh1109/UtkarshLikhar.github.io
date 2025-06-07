@@ -1,0 +1,295 @@
+<!-- 
+  This immersive document contains the complete HTML, CSS, and JavaScript code 
+  for a personal portfolio website, designed to be hosted on GitHub Pages.
+-->
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom styles to match the portfolio theme */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #333;
+            border-radius: 2px;
+        }
+        .btn {
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">Your Name</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-gray-800 nav-link">About</a>
+                <a href="#experience" class="text-gray-600 hover:text-gray-800 nav-link">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-gray-800 nav-link">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-800 nav-link">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-200">Experience</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <section id="profile" class="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-20">
+            <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
+                <!-- Placeholder for your picture -->
+                 <img src="https://placehold.co/350x350/EFEFEF/333333?text=Your+Photo" alt="Your Name" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg">
+            </div>
+            <div class="md:w-1/2">
+                <p class="text-lg text-gray-600">Hello, I'm</p>
+                <h1 class="text-5xl font-bold text-gray-800 mt-2">Your Name</h1>
+                <p class="text-2xl text-gray-500 mt-4">A Passionate Developer</p>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="bg-gray-800 text-white font-bold py-3 px-6 rounded-full btn">Download CV</a>
+                    <a href="#contact" class="bg-white text-gray-800 font-bold py-3 px-6 rounded-full border-2 border-gray-800 btn">Contact Info</a>
+                </div>
+                <div class="mt-8 flex justify-center md:justify-start space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition"><i class="fab fa-github fa-2x"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 text-center">
+            <h2 class="section-title text-4xl font-bold">About Me</h2>
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                 <div class="md:w-1/3 flex justify-center">
+                     <img src="https://placehold.co/400x400/EFEFEF/333333?text=Another+Photo" alt="About me" class="rounded-lg shadow-xl w-full">
+                 </div>
+                 <div class="md:w-2/3 text-left">
+                     <p class="text-lg text-gray-700 leading-relaxed">
+                        This is where you'll write a detailed description about yourself. Talk about your journey, your passion for technology, what drives you, and what you're skilled in. Mention key areas of interest like web development, data science, or machine learning. Keep it engaging and professional. This is placeholder text to show how a paragraph would look.
+                     </p>
+                     <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                        You can add another paragraph here to talk about your professional experience, your goals, or what kind of opportunities you are looking for.
+                     </p>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 text-center">
+            <h2 class="section-title text-4xl font-bold">My Skills</h2>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6">Frontend Development</h3>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-left">
+                        <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">HTML</h4>
+                                <p class="text-sm text-gray-500">Experienced</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">CSS</h4>
+                                <p class="text-sm text-gray-500">Experienced</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">JavaScript</h4>
+                                <p class="text-sm text-gray-500">Intermediate</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">React</h4>
+                                <p class="text-sm text-gray-500">Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6">Backend Development</h3>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-left">
+                         <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Node.js</h4>
+                                <p class="text-sm text-gray-500">Basic</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Express.js</h4>
+                                <p class="text-sm text-gray-500">Basic</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Python</h4>
+                                <p class="text-sm text-gray-500">Intermediate</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Git</h4>
+                                <p class="text-sm text-gray-500">Experienced</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 text-center">
+            <h2 class="section-title text-4xl font-bold">My Projects</h2>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
+                    <img src="https://placehold.co/600x400/EFEFEF/333333?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Project One</h3>
+                        <p class="text-gray-600 mb-4">A short description of your project goes here. What problem does it solve?</p>
+                        <a href="#" class="text-gray-800 font-bold hover:underline">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
+                    <img src="https://placehold.co/600x400/EFEFEF/333333?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Project Two</h3>
+                        <p class="text-gray-600 mb-4">A short description of your project goes here. What technologies did you use?</p>
+                        <a href="#" class="text-gray-800 font-bold hover:underline">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
+                    <img src="https://placehold.co/600x400/EFEFEF/333333?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Project Three</h3>
+                        <p class="text-gray-600 mb-4">A short description of your project goes here. What was the outcome?</p>
+                        <a href="#" class="text-gray-800 font-bold hover:underline">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center">
+             <h2 class="section-title text-4xl font-bold">Contact Me</h2>
+             <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                 <p class="text-lg text-gray-600 mb-6">Feel free to reach out! The best way to contact me is via email.</p>
+                 <div class="flex items-center space-x-4">
+                     <i class="fas fa-envelope fa-2x text-gray-700"></i>
+                     <a href="mailto:your.email@example.com" class="text-xl text-gray-800 hover:underline">your.email@example.com</a>
+                 </div>
+             </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+```
