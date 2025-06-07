@@ -78,6 +78,22 @@
         html {
             scroll-behavior: smooth;
         }
+      .wave {
+      display: inline-block;
+      font-size: 5rem;               /* emoji size */
+      transform-origin: bottom center;
+      animation: wave 2s infinite;
+    }
+
+    @keyframes wave {
+      0%   { transform: rotate(0deg);  }
+      15%  { transform: rotate(14deg); }
+      30%  { transform: rotate(-8deg); }
+      45%  { transform: rotate(14deg); }
+      60%  { transform: rotate(-4deg); }
+      75%  { transform: rotate(10deg); }
+      100% { transform: rotate(0deg);  }
+    }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -85,7 +101,7 @@
     <!-- Header & Navigation -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">Your Name</a>
+            <a href="#" class="text-2xl font-bold text-gray-800">Utkarsh Likhar</a>
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="text-gray-600 hover:text-gray-800 nav-link">About</a>
                 <a href="#experience" class="text-gray-600 hover:text-gray-800 nav-link">Experience</a>
@@ -114,8 +130,8 @@
                  <img src="https://placehold.co/350x350/EFEFEF/333333?text=Your+Photo" alt="Your Name" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg">
             </div>
             <div class="md:w-1/2">
-                <p class="text-lg text-gray-600">Hello, I'm</p>
-                <h1 class="text-5xl font-bold text-gray-800 mt-2">Your Name</h1>
+                <p class="text-lg text-gray-600">Hello <span class="wave">👋</span>, I'm</p>
+                <h1 class="text-5xl font-bold text-gray-800 mt-2">Utkarsh Likhar</h1>
                 <p class="text-2xl text-gray-500 mt-4">A Passionate Developer</p>
                 <div class="mt-8 flex justify-center md:justify-start space-x-4">
                     <a href="#" class="bg-gray-800 text-white font-bold py-3 px-6 rounded-full btn">Download CV</a>
